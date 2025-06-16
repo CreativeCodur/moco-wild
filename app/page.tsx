@@ -44,11 +44,11 @@ export default function Home() {
       <main className="flex flex-col min-h-screen" role="main">
         {/* Hero Section with Natural Elements */}
         <section
-          className="relative w-full min-h-[90vh] overflow-hidden hero-content"
+          className="relative w-full min-h-[90vh] overflow-hidden hero-section"
           aria-label="Hero section"
         >
-          <div className="absolute inset-0 hero-gradient clip-wave z-0"></div>
-          <div className="absolute inset-0 hero-pattern z-0"></div>
+          <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
+          <div className="absolute inset-0 leaf-pattern z-0 opacity-30"></div>
 
           {/* Natural background elements */}
           <motion.div
@@ -64,15 +64,15 @@ export default function Home() {
 
           <div className="absolute inset-0 z-10">
             <div className="container h-full px-4 md:px-6 flex flex-col justify-center">
-              <div className="hero-grid">
-                <div className="hero-text-container hero-fade-in">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="flex flex-col justify-between h-[370px]">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="relative"
                   >
-                    <h1 className="hero-title text-white">
+                    <h1 className="text-3xl font-normal tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
                       Nurturing <span className="text-secondary">Wildlife</span> in Montgomery County
                     </h1>
                   </motion.div>
@@ -81,12 +81,32 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="mt-6"
                   >
-                    <p className="hero-description text-white dark:text-white leading-relaxed">
+                    <p className="text-lg sm:text-xl text-white dark:text-white max-w-[600px] leading-relaxed">
                       Creating a sanctuary where local ecosystems thrive and endangered species find protection through
                       community care and education.
                     </p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.8 }}
+                    className="flex flex-wrap gap-4"
+                  >
+                    <Link href="/join">
+                      <Button size="lg" className="cozy-button bg-secondary hover:bg-secondary/90 text-white border-none">
+                        Become a Guardian
+                      </Button>
+                    </Link>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      onClick={scrollToMission}
+                      className="cozy-button bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20 hover:border-white/30"
+                    >
+                      Our Conservation Story
+                    </Button>
                   </motion.div>
                 </div>
 
@@ -96,7 +116,7 @@ export default function Home() {
                   transition={{ delay: 0.6, duration: 1 }}
                   className="relative hero-image-container"
                 >
-                  <div className="hero-image-wrapper">
+                  <div className="relative h-[370px] w-[500px] rounded-lg">
                     <div className="absolute top-0 left-0 h-full w-full bg-white/10 rounded-lg blur-3xl"></div>
                     <motion.div
                       className="relative h-full w-full rounded-lg overflow-hidden border-4 border-white/20"
@@ -108,7 +128,7 @@ export default function Home() {
                         alt="MoCo Wild - Wildlife Conservation"
                         width={500}
                         height={500}
-                        className="object-cover w-full h-full"
+                        className="object-cover"
                         priority
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
