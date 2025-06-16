@@ -6,17 +6,17 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
-        <div className="absolute inset-0 leaf-pattern z-0 opacity-30"></div>
+      <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden hero-content">
+        <div className="absolute inset-0 hero-gradient clip-wave z-0"></div>
+        <div className="absolute inset-0 hero-pattern z-0"></div>
 
         <div className="container px-4 md:px-6 relative z-10">
-          <div className="flex flex-col items-center space-y-4 text-center">
+          <div className="hero-text-container hero-fade-in">
             <div className="space-y-2">
-              <h1 className="text-3xl font-normal tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
+              <h1 className="hero-title text-white">
                 About MoCo Wild
               </h1>
-              <p className="mx-auto max-w-[700px] text-white dark:text-white md:text-xl">
+              <p className="hero-description text-white dark:text-white">
                 Our story, mission, and the dedicated team nurturing Montgomery County&apos;s wildlife.
               </p>
             </div>
