@@ -44,7 +44,7 @@ export default function Home() {
       <main className="flex flex-col min-h-screen" role="main">
         {/* Hero Section with Natural Elements */}
         <section
-          className="relative w-full min-h-[60vh] sm:min-h-[80vh] md:min-h-[90vh] overflow-hidden py-8 sm:py-12"
+          className="relative w-full min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] overflow-hidden py-4 sm:py-8 md:py-12"
           aria-label="Hero section"
         >
           <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
@@ -65,14 +65,14 @@ export default function Home() {
           <div className="absolute inset-0 z-10">
             <div className="container h-full px-4 md:px-6 flex flex-col justify-center">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
-                <div className="flex flex-col justify-between h-auto min-h-[220px] sm:min-h-[300px] md:min-h-[370px]">
+                <div className="flex flex-col justify-between h-auto min-h-[180px] sm:min-h-[220px] md:min-h-[300px]">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="relative"
                   >
-                    <h1 className="text-3xl font-normal tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
+                    <h1 className="text-2xl font-normal tracking-tighter text-white sm:text-3xl md:text-4xl lg:text-5xl/none">
                       Nurturing <span className="text-secondary">Wildlife</span> in Montgomery County
                     </h1>
                   </motion.div>
@@ -82,7 +82,7 @@ export default function Home() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
                   >
-                    <p className="text-lg sm:text-xl text-white dark:text-white max-w-[600px] leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-white dark:text-white max-w-[600px] leading-relaxed">
                       Creating a sanctuary where local ecosystems thrive and endangered species find protection through
                       community care and education.
                     </p>
