@@ -10,11 +10,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { FaEnvelope, FaInstagram, FaChevronLeft, FaChevronRight, FaHeart } from "react-icons/fa"
 import { GiPalmTree, GiPineTree } from "react-icons/gi"
 import { FaTree } from "react-icons/fa"
+import { ImageWithLoading } from "@/components/image-with-loading"
 
 export default function GetInvolvedPage() {
   const [resourceSlide, setResourceSlide] = useState(0)
   const [actionSlide, setActionSlide] = useState(0)
-  const [direction, setDirection] = useState(0) // -1 for left, 1 for right
+  const [direction, setDirection] = useState<number>(0) // -1 for left, 1 for right
 
   const resourceLinks = [
     {
@@ -22,24 +23,28 @@ export default function GetInvolvedPage() {
       title: "Understanding Wildlife Conservation",
       description: "Learn about the importance of wildlife conservation and how it impacts our ecosystem.",
       link: "https://www.nwf.org/Educational-Resources/Wildlife-Guide",
+      image: "/images/IMG_20250322_182553_159.jpg",
     },
     {
       id: 2,
       title: "Local Endangered Species",
       description: "Information about endangered species in Montgomery County and how you can help protect them.",
       link: "https://dnr.maryland.gov/wildlife/Pages/plants_wildlife/rte/espaa.aspx",
+      image: "/images/IMG_20250322_182550_104.jpg",
     },
     {
       id: 3,
       title: "Native Plant Resources",
       description: "Discover how native plants support local wildlife and how to incorporate them into your garden.",
       link: "https://www.montgomerycountymd.gov/green/trees/native-trees.html",
+      image: "/images/IMG_20250322_182931_028.jpg",
     },
     {
       id: 4,
       title: "Reducing Human-Wildlife Conflicts",
       description: "Tips for coexisting peacefully with wildlife in suburban and urban environments.",
       link: "https://www.humanesociety.org/resources/wildlife-management",
+      image: "/images/IMG_20250322_182941_411.jpg",
     },
   ]
 
@@ -49,50 +54,50 @@ export default function GetInvolvedPage() {
       title: "Create a Wildlife-Friendly Yard",
       description:
         "Plant native species, provide water sources, and reduce chemical use to create habitat for local wildlife.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/IMG_20240930_185032_017.jpg",
       icon: <GiPineTree className="h-6 w-6 text-secondary" />,
     },
     {
       id: 2,
       title: "Participate in Citizen Science",
       description: "Join wildlife monitoring programs to help track and protect local species populations.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/IMG_20240930_185019_720.jpg",
       icon: <FaTree className="h-6 w-6 text-secondary" />,
     },
     {
       id: 3,
       title: "Reduce Plastic Use",
       description: "Minimize plastic consumption to prevent pollution that harms wildlife and their habitats.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/IMG_20240930_185011_534.jpg",
       icon: <GiPalmTree className="h-6 w-6 text-secondary" />,
     },
     {
       id: 4,
       title: "Advocate for Wildlife Protection",
       description: "Contact local representatives to support policies that protect wildlife and natural habitats.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/IMG_20240930_185023_490.jpg",
       icon: <FaHeart className="h-6 w-6 text-secondary" />,
     },
   ]
 
-  const nextSlide = (items, current, setter) => {
+  const nextSlide = (items: any[], current: number, setter: React.Dispatch<React.SetStateAction<number>>) => {
     setDirection(1)
-    setter((prev) => (prev === items.length - 1 ? 0 : prev + 1))
+    setter((prev: number) => (prev === items.length - 1 ? 0 : prev + 1))
   }
 
-  const prevSlide = (items, current, setter) => {
+  const prevSlide = (items: any[], current: number, setter: React.Dispatch<React.SetStateAction<number>>) => {
     setDirection(-1)
-    setter((prev) => (prev === 0 ? items.length - 1 : prev - 1))
+    setter((prev: number) => (prev === 0 ? items.length - 1 : prev - 1))
   }
 
-  const goToSlide = (index, setter, currentIndex) => {
+  const goToSlide = (index: number, setter: React.Dispatch<React.SetStateAction<number>>, currentIndex: number) => {
     setDirection(index > currentIndex ? 1 : -1)
     setter(index)
   }
 
   // Animation variants
   const variants = {
-    enter: (direction) => ({
+    enter: (direction: number) => ({
       x: direction > 0 ? 300 : -300,
       opacity: 0,
     }),
@@ -100,7 +105,7 @@ export default function GetInvolvedPage() {
       x: 0,
       opacity: 1,
     },
-    exit: (direction) => ({
+    exit: (direction: number) => ({
       x: direction < 0 ? 300 : -300,
       opacity: 0,
     }),
@@ -119,7 +124,7 @@ export default function GetInvolvedPage() {
               <h1 className="text-3xl font-normal tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
                 Join Our Circle
               </h1>
-              <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl">
+              <p className="mx-auto max-w-[700px] text-white dark:text-white md:text-xl">
                 Become part of our community dedicated to protecting Montgomery County&apos;s wildlife and natural
                 habitats.
               </p>
@@ -136,13 +141,13 @@ export default function GetInvolvedPage() {
             <TabsList className="grid w-full grid-cols-2 rounded-full bg-accent/50 p-1">
               <TabsTrigger
                 value="get-involved"
-                className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary dark:data-[state=active]:bg-gray-800"
+                className="rounded-full text-black data-[state=active]:bg-black data-[state=active]:text-black dark:data-[state=active]:bg-gray-200"
               >
                 Get Involved
               </TabsTrigger>
               <TabsTrigger
                 value="contact"
-                className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary dark:data-[state=active]:bg-gray-800"
+                className="rounded-full text-black data-[state=active]:bg-black data-[state=active]:text-black dark:data-[state=active]:bg-gray-200"
               >
                 Contact Us
               </TabsTrigger>
@@ -159,7 +164,7 @@ export default function GetInvolvedPage() {
                   <Card className="nature-card overflow-hidden border-0 h-full">
                     <CardHeader className="bg-gradient-to-r from-secondary to-secondary/80 text-white">
                       <CardTitle>Become a Wildlife Guardian</CardTitle>
-                      <CardDescription className="text-gray-100">Join our team of dedicated volunteers</CardDescription>
+                      <CardDescription className="text-white dark:text-white">Join our team of dedicated volunteers</CardDescription>
                     </CardHeader>
                     <CardContent className="p-4 sm:p-6">
                       <div className="space-y-4">
@@ -169,25 +174,25 @@ export default function GetInvolvedPage() {
                             <div className="bg-secondary/10 rounded-full p-1">
                               <GiPineTree className="h-4 w-4 text-secondary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">Wildlife Monitoring</span>
+                            <span className="text-zinc-600 dark:text-zinc-600">Wildlife Monitoring</span>
                           </li>
                           <li className="flex items-center gap-2">
                             <div className="bg-secondary/10 rounded-full p-1">
                               <FaTree className="h-4 w-4 text-secondary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">Habitat Restoration</span>
+                            <span className="text-zinc-600 dark:text-zinc-600">Habitat Restoration</span>
                           </li>
                           <li className="flex items-center gap-2">
                             <div className="bg-secondary/10 rounded-full p-1">
                               <FaHeart className="h-4 w-4 text-secondary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">Educational Outreach</span>
+                            <span className="text-zinc-600 dark:text-zinc-600">Educational Outreach</span>
                           </li>
                           <li className="flex items-center gap-2">
                             <div className="bg-secondary/10 rounded-full p-1">
                               <GiPalmTree className="h-4 w-4 text-secondary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">Event Support</span>
+                            <span className="text-zinc-600 dark:text-zinc-600">Event Support</span>
                           </li>
                         </ul>
 
@@ -197,13 +202,13 @@ export default function GetInvolvedPage() {
                             <div className="bg-primary/10 rounded-full p-1">
                               <GiPalmTree className="h-4 w-4 text-primary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">Montgomery County resident</span>
+                            <span className="text-zinc-600 dark:text-zinc-600">Montgomery County resident</span>
                           </li>
                           <li className="flex items-center gap-2">
                             <div className="bg-primary/10 rounded-full p-1">
                               <GiPalmTree className="h-4 w-4 text-primary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">
+                            <span className="text-zinc-600 dark:text-zinc-600">
                               18+ years of age (or 16+ with parental consent)
                             </span>
                           </li>
@@ -211,7 +216,7 @@ export default function GetInvolvedPage() {
                             <div className="bg-primary/10 rounded-full p-1">
                               <GiPalmTree className="h-4 w-4 text-primary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">
+                            <span className="text-zinc-600 dark:text-zinc-600">
                               Commitment of at least 4 hours per month
                             </span>
                           </li>
@@ -219,234 +224,121 @@ export default function GetInvolvedPage() {
                             <div className="bg-primary/10 rounded-full p-1">
                               <GiPalmTree className="h-4 w-4 text-primary" />
                             </div>
-                            <span className="text-gray-600 dark:text-gray-300">Passion for wildlife conservation</span>
+                            <span className="text-zinc-600 dark:text-zinc-600">Passion for wildlife conservation</span>
                           </li>
                         </ul>
                       </div>
                     </CardContent>
                     <CardFooter>
                       <Link href="/join">
-                        <Button size="lg" className="cozy-button w-full bg-secondary hover:bg-secondary/90 text-white">
+                        <button
+                          className="cozy-button w-full bg-secondary hover:bg-secondary/90 text-white dark:text-white h-11 rounded-md px-8 font-medium"
+                        >
                           Join Our Circle
-                        </Button>
+                        </button>
                       </Link>
                     </CardFooter>
                   </Card>
                 </motion.div>
 
                 <div className="space-y-8">
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className="space-y-4"
-                  >
-                    <h2 className="text-2xl font-normal text-primary">Learning Resources</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      Explore these resources to deepen your understanding of wildlife conservation.
-                    </p>
-
-                    {/* Animated Carousel */}
-                    <div className="relative rounded-lg overflow-hidden shadow-md" style={{ height: "320px" }}>
-                      <AnimatePresence initial={false} custom={direction} mode="wait">
-                        <motion.div
-                          key={resourceSlide}
-                          custom={direction}
-                          variants={variants}
-                          initial="enter"
-                          animate="center"
-                          exit="exit"
-                          transition={{
-                            x: { type: "spring", stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 },
-                          }}
-                          className="absolute w-full h-full"
-                        >
-                          <Card className="nature-card border-0 h-full flex flex-col">
-                            <CardHeader>
-                              <CardTitle className="text-primary">{resourceLinks[resourceSlide].title}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                              <p className="text-gray-600 dark:text-gray-300">
-                                {resourceLinks[resourceSlide].description}
-                              </p>
-                            </CardContent>
-                            <CardFooter>
-                              <Link href={resourceLinks[resourceSlide].link} target="_blank" rel="noopener noreferrer">
-                                <Button
-                                  variant="outline"
-                                  className="cozy-button border-primary/20 hover:border-primary/40"
-                                >
-                                  Explore Resource
-                                </Button>
-                              </Link>
-                            </CardFooter>
-                          </Card>
-                        </motion.div>
-                      </AnimatePresence>
-
-                      <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 z-10">
-                        {resourceLinks.map((_, index) => (
-                          <button
-                            key={index}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              resourceSlide === index ? "bg-primary w-4" : "bg-primary/30"
-                            }`}
-                            onClick={() => goToSlide(index, setResourceSlide, resourceSlide)}
-                            aria-label={`Go to slide ${index + 1}`}
-                          />
-                        ))}
-                      </div>
-
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90"
-                        onClick={() => prevSlide(resourceLinks, resourceSlide, setResourceSlide)}
-                      >
-                        <FaChevronLeft className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90"
-                        onClick={() => nextSlide(resourceLinks, resourceSlide, setResourceSlide)}
-                      >
-                        <FaChevronRight className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="space-y-4"
+                    className="space-y-4 mt-8"
                   >
                     <h2 className="text-2xl font-normal text-primary">Simple Acts of Stewardship</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-zinc-600 dark:text-zinc-600">
                       Small actions you can take to help protect local wildlife.
                     </p>
-
-                    {/* Animated Carousel */}
-                    <div className="relative rounded-lg overflow-hidden shadow-md" style={{ height: "320px" }}>
-                      <AnimatePresence initial={false} custom={direction} mode="wait">
-                        <motion.div
-                          key={actionSlide}
-                          custom={direction}
-                          variants={variants}
-                          initial="enter"
-                          animate="center"
-                          exit="exit"
-                          transition={{
-                            x: { type: "spring", stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 },
-                          }}
-                          className="absolute w-full h-full"
-                        >
-                          <div className="relative h-full rounded-lg overflow-hidden">
-                            <Image
-                              src={actionItems[actionSlide].image || "/placeholder.svg"}
-                              alt={actionItems[actionSlide].title}
-                              fill
-                              className="object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                              <div className="flex items-center gap-3 mb-2">
-                                <div className="bg-white/90 dark:bg-gray-800/90 p-2 rounded-full">
-                                  {actionItems[actionSlide].icon}
-                                </div>
-                                <h3 className="text-xl font-bold text-white">{actionItems[actionSlide].title}</h3>
-                              </div>
-                              <p className="text-gray-100 text-sm">{actionItems[actionSlide].description}</p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      </AnimatePresence>
-
-                      <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 z-10">
-                        {actionItems.map((_, index) => (
-                          <button
-                            key={index}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              actionSlide === index ? "bg-white w-4" : "bg-white/30"
-                            }`}
-                            onClick={() => goToSlide(index, setActionSlide, actionSlide)}
-                            aria-label={`Go to slide ${index + 1}`}
-                          />
-                        ))}
-                      </div>
-
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90"
-                        onClick={() => prevSlide(actionItems, actionSlide, setActionSlide)}
-                      >
-                        <FaChevronLeft className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90"
-                        onClick={() => nextSlide(actionItems, actionSlide, setActionSlide)}
-                      >
-                        <FaChevronRight className="h-4 w-4" />
-                      </Button>
-                    </div>
                   </motion.div>
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={actionSlide}
+                      custom={direction}
+                      variants={variants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 },
+                      }}
+                      className="relative h-[250px] w-full rounded-lg overflow-hidden border-4 border-white/20 shadow-xl"
+                    >
+                      <Image
+                        src={actionItems[actionSlide].image}
+                        alt={actionItems[actionSlide].title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <div className="flex items-center gap-2 mb-2">
+                          {actionItems[actionSlide].icon}
+                          <h3 className="text-xl font-bold text-white">{actionItems[actionSlide].title}</h3>
+                        </div>
+                        <p className="text-white dark:text-white text-sm">{actionItems[actionSlide].description}</p>
+                      </div>
+                      {/* Left and Right Carousel Buttons */}
+                      <button
+                        className="absolute left-2 top-1/2 -translate-y-1/2 carousel-button"
+                        onClick={() => prevSlide(actionItems, actionSlide, setActionSlide)}
+                        aria-label="Previous slide"
+                        type="button"
+                      >
+                        <FaChevronLeft className="h-5 w-5 text-secondary" />
+                      </button>
+                      <button
+                        className="absolute right-2 top-1/2 -translate-y-1/2 carousel-button"
+                        onClick={() => nextSlide(actionItems, actionSlide, setActionSlide)}
+                        aria-label="Next slide"
+                        type="button"
+                      >
+                        <FaChevronRight className="h-5 w-5 text-secondary" />
+                      </button>
+                    </motion.div>
+                  </AnimatePresence>
+                  <div className="flex justify-center gap-2 mt-4">
+                    {actionItems.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goToSlide(index, setActionSlide, actionSlide)}
+                        className={`h-2 w-2 rounded-full ${index === actionSlide ? "bg-secondary" : "bg-gray-400"}`}
+                        aria-label={`Go to action slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </TabsContent>
 
             <TabsContent value="contact" className="mt-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Card className="nature-card border-0">
-                  <CardHeader>
-                    <CardTitle className="text-primary">Contact Us</CardTitle>
-                    <CardDescription>
-                      Reach out to us with questions, suggestions, or to learn more about our work.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="nature-icon shrink-0">
-                        <FaEnvelope className="h-6 w-6" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-primary">Email</h3>
-                        <Link href="mailto:mocowild@gmail.com" className="text-secondary hover:underline">
-                          mocowild@gmail.com
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="nature-icon shrink-0">
-                        <FaInstagram className="h-6 w-6" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-primary">Instagram</h3>
-                        <Link
-                          href="https://www.instagram.com/moco_wild/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-secondary hover:underline"
-                        >
-                          @moco_wild
-                        </Link>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <div className="space-y-8 text-center">
+                <h2 className="text-3xl font-normal text-primary">Contact Us</h2>
+                <p className="text-zinc-600 dark:text-zinc-600 max-w-2xl mx-auto">
+                  Have questions or want to get involved? Reach out to us through the following channels:
+                </p>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-4xl">
+                  <a href="mailto:mocowild@gmail.com" className="nature-card p-6 flex flex-col items-center gap-4 group hover:bg-secondary/10 transition-colors duration-300">
+                    <FaEnvelope className="h-10 w-10 text-secondary group-hover:text-primary transition-colors duration-300" />
+                    <h3 className="text-xl font-semibold text-primary">Email</h3>
+                    <p className="text-zinc-600 dark:text-zinc-600">mocowild@gmail.com</p>
+                  </a>
+                  <a href="https://www.instagram.com/moco_wild" target="_blank" rel="noopener noreferrer" className="nature-card p-6 flex flex-col items-center gap-4 group hover:bg-secondary/10 transition-colors duration-300">
+                    <FaInstagram className="h-10 w-10 text-secondary group-hover:text-primary transition-colors duration-300" />
+                    <h3 className="text-xl font-semibold text-primary">Instagram</h3>
+                    <p className="text-zinc-600 dark:text-zinc-600">@moco_wild</p>
+                  </a>
+                  <a href="#" className="nature-card p-6 flex flex-col items-center gap-4 group hover:bg-secondary/10 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-primary">Volunteer Form</h3>
+                    <p className="text-zinc-600 dark:text-zinc-600">Fill out our form to get involved</p>
+                  </a>
+                </div>
+              </div>
             </TabsContent>
           </Tabs>
         </div>

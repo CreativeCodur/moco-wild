@@ -1,18 +1,22 @@
-import { Montserrat, Playfair_Display } from "next/font/google"
+import { Style_Script, Rubik, Barlow } from "next/font/google"
 
-// Use Playfair Display for headings with only weight 400
-export const playfair = Playfair_Display({
+// Use Style Script for headings with only weight 400
+export const styleScript = Style_Script({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-  weight: ["400"], // Only using normal weight (400)
+  weight: ["400"],
+  variable: "--font-style-script",
 })
 
-// Use Montserrat as the primary body font
-export const montserrat = Montserrat({
+// Use Rubik as the primary body font
+export const rubik = Rubik({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-  weight: ["300", "400", "500"],
+  variable: "--font-rubik",
+})
+
+// Use Barlow as the primary body font
+export const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-barlow",
 })
 

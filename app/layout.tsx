@@ -1,15 +1,23 @@
-import type React from "react"
-import "@/app/globals.css"
-import { playfair, montserrat } from "./fonts"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { Metadata, Viewport } from "next"
+import { Inter } from "next/font/google"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { styleScript, rubik, barlow } from "./fonts"
+import "./globals.css"
 
-export const metadata = {
-  title: "MoCo Wild - Protecting Montgomery County's Wildlife",
-  description:
-    "Dedicated to raising money for endangered species and protecting local wildlife in Montgomery County, Maryland.",
-    generator: 'v0.dev'
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "MoCo Wild",
+  description: "Dedicated to raising money for endangered species and protecting local wildlife in Montgomery County, Maryland.",
+  generator: "v0.dev",
+  robots: "index, follow",
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({
@@ -18,26 +26,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`min-h-screen bg-background font-sans antialiased ${playfair.variable} ${montserrat.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange={false}
-          storageKey="moco-wild-theme"
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
-            <div className="flex-1">{children}</div>
-            <SiteFooter />
-          </div>
-        </ThemeProvider>
+    <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body className={`min-h-screen bg-background font-sans antialiased ${styleScript.variable} ${rubik.variable} ${barlow.variable}`}>
+        <div className="relative flex min-h-screen flex-col">
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'

@@ -1,7 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-export const config = {
-  darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+    "./hooks/**/*.{js,ts,jsx,tsx,mdx}",
+    "./styles/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -12,8 +17,9 @@ export const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-montserrat)", "ui-sans-serif", "system-ui", "sans-serif"],
-        headline: ["var(--font-playfair)", "ui-serif", "Georgia", "serif"],
+        sans: ["var(--font-rubik)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-style-script)", "ui-serif", "Georgia", "serif"],
+        body: ["var(--font-barlow)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

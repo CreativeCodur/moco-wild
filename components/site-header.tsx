@@ -4,7 +4,6 @@ import { useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { MainNav } from "@/components/main-nav"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { MobileNav } from "@/components/mobile-nav"
 
 export function SiteHeader() {
@@ -41,7 +40,6 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
         </div>
       </div>
     </header>

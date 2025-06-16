@@ -16,24 +16,6 @@ export function MainNav() {
         About Us
       </Link>
       <Link
-        href="/record"
-        className="text-sm sm:text-sm font-headline font-normal text-muted-foreground transition-colors hover:text-primary whitespace-nowrap"
-      >
-        Record of Action
-      </Link>
-      <Link
-        href="/leadership"
-        className="text-sm sm:text-sm font-headline font-normal text-muted-foreground transition-colors hover:text-primary whitespace-nowrap"
-      >
-        Leadership
-      </Link>
-      <Link
-        href="/gallery"
-        className="text-sm sm:text-sm font-headline font-normal text-muted-foreground transition-colors hover:text-primary whitespace-nowrap"
-      >
-        Gallery
-      </Link>
-      <Link
         href="/get-involved"
         className="text-sm sm:text-sm font-headline font-normal text-muted-foreground transition-colors hover:text-primary whitespace-nowrap"
       >

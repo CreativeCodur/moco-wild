@@ -27,22 +27,27 @@ export function MobileNav() {
   const menuItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/record", label: "Record of Action" },
-    { href: "/leadership", label: "Leadership" },
-    { href: "/gallery", label: "Gallery" },
     { href: "/get-involved", label: "Get Involved" },
   ]
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden p-1" onClick={() => setOpen((prev) => !prev)}>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="md:hidden p-1 hover:bg-transparent focus:bg-transparent focus-visible:ring-0" 
+          onClick={() => setOpen((prev) => !prev)}
+        >
           <AnimatedHamburger isOpen={open} />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[80%] max-w-[300px] sm:w-[300px] sm:max-w-[400px] p-4">
-        <div className="flex flex-col space-y-3 py-4 mt-8">
+      <SheetContent 
+        side="left" 
+        className="w-[85%] max-w-[300px] sm:w-[300px] sm:max-w-[400px] p-4 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      >
+        <div className="flex flex-col space-y-4 py-4 mt-8">
           <AnimatePresence>
             {menuItems.map((item, i) => (
               <motion.div
@@ -55,7 +60,7 @@ export function MobileNav() {
               >
                 <Link
                   href={item.href}
-                  className="text-base sm:text-lg font-headline font-normal hover:text-primary block py-2 transition-colors duration-200"
+                  className="text-base sm:text-lg font-headline font-normal hover:text-primary block py-3 px-4 transition-colors duration-200 rounded-lg hover:bg-accent/50"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
