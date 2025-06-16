@@ -48,7 +48,17 @@ export default function Home() {
           <div className="absolute inset-0 leaf-pattern z-0 opacity-30"></div>
 
           <div className="container px-4 md:px-6 relative z-10 flex items-center justify-center min-h-[calc(100vh-4rem)]">
-            <div className="flex flex-col items-center space-y-2 md:space-y-3 text-center -mt-8">
+            <motion.div 
+              className="flex flex-col items-center space-y-2 md:space-y-3 text-center -mt-8"
+              animate={{ 
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -91,7 +101,7 @@ export default function Home() {
                   Our Conservation Story
                 </Button>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
