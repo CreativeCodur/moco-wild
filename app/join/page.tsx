@@ -16,26 +16,17 @@ export default function JoinPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-        {/* Responsive: reduce padding on small screens */}
-        <style jsx>{`
-          @media (max-width: 640px) {
-            section {
-              padding-top: 2rem !important;
-              padding-bottom: 2rem !important;
-            }
-          }
-        `}</style>
+      <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden hero-section">
         <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
         <div className="absolute inset-0 leaf-pattern z-0 opacity-30"></div>
 
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-normal tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none" style={{fontSize: 'clamp(2rem, 7vw, 2.5rem)'}}>
+              <h1 className="text-3xl font-normal tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none hero-title">
                 Become a Guardian
               </h1>
-              <p className="mx-auto max-w-[700px] text-white dark:text-white md:text-xl" style={{fontSize: 'clamp(1rem, 4vw, 1.25rem)'}}>
+              <p className="mx-auto max-w-[700px] text-white dark:text-white md:text-xl hero-description">
                 Join our community dedicated to protecting Montgomery County&apos;s wildlife and natural habitats.
               </p>
             </div>

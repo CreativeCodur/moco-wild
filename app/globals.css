@@ -265,6 +265,20 @@ body {
     width: clamp(40px, 10vw, 60px);
     height: clamp(40px, 10vw, 60px);
   }
+
+  /* Hero section responsive styles */
+  .hero-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 2.5rem) !important;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+  }
 }
 
 /* Tablet and Medium Screens */
