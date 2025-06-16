@@ -42,100 +42,55 @@ export default function Home() {
   return (
     <ErrorBoundary>
       <main className="flex flex-col min-h-screen" role="main">
-        {/* Hero Section with Natural Elements */}
-        <section
-          className="relative w-full min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] overflow-hidden py-4 sm:py-8 md:py-12"
-          aria-label="Hero section"
-        >
+        {/* Hero Section */}
+        <section className="w-full py-6 md:py-12 lg:py-24 relative overflow-hidden hero-section min-h-[calc(100vh-4rem)]">
           <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
           <div className="absolute inset-0 leaf-pattern z-0 opacity-30"></div>
 
-          {/* Natural background elements */}
-          <motion.div
-            className="absolute top-20 left-20 w-64 h-64 rounded-full bg-white/10 blur-3xl"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          ></motion.div>
-          <motion.div
-            className="absolute bottom-40 right-20 w-80 h-80 rounded-full bg-secondary/20 blur-3xl"
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 1 }}
-          ></motion.div>
+          <div className="container px-4 md:px-6 relative z-10 flex items-center justify-center min-h-[calc(100vh-4rem)]">
+            <div className="flex flex-col items-center space-y-3 md:space-y-4 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <h1 className="text-2xl font-normal tracking-tighter text-white sm:text-3xl md:text-4xl lg:text-5xl/none">
+                  Nurturing <span className="text-secondary">Wildlife</span> in Montgomery County
+                </h1>
+              </motion.div>
 
-          <div className="absolute inset-0 z-10">
-            <div className="container h-full px-4 md:px-6 flex flex-col justify-center">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
-                <div className="flex flex-col justify-between h-auto min-h-[180px] sm:min-h-[220px] md:min-h-[300px]">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative"
-                  >
-                    <h1 className="text-2xl font-normal tracking-tighter text-white sm:text-3xl md:text-4xl lg:text-5xl/none">
-                      Nurturing <span className="text-secondary">Wildlife</span> in Montgomery County
-                    </h1>
-                  </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              >
+                <p className="text-base sm:text-lg md:text-xl text-white dark:text-white max-w-[600px] leading-relaxed">
+                  Creating a sanctuary where local ecosystems thrive and endangered species find protection through
+                  community care and education.
+                </p>
+              </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
-                  >
-                    <p className="text-base sm:text-lg md:text-xl text-white dark:text-white max-w-[600px] leading-relaxed">
-                      Creating a sanctuary where local ecosystems thrive and endangered species find protection through
-                      community care and education.
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 0.8 }}
-                    className="flex flex-wrap gap-4"
-                  >
-                    <Link href="/join">
-                      <Button size="lg" className="cozy-button bg-secondary hover:bg-secondary/90 text-white border-none">
-                        Become a Guardian
-                      </Button>
-                    </Link>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      onClick={scrollToMission}
-                      className="cozy-button bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20 hover:border-white/30"
-                    >
-                      Our Conservation Story
-                    </Button>
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6, duration: 1 }}
-                  className="relative"
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-wrap gap-4"
+              >
+                <Link href="/join">
+                  <Button size="lg" className="cozy-button bg-secondary hover:bg-secondary/90 text-white border-none">
+                    Become a Guardian
+                  </Button>
+                </Link>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={scrollToMission}
+                  className="cozy-button bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20 hover:border-white/30"
                 >
-                  <div className="relative w-full h-[180px] xs:h-[220px] sm:h-[300px] md:h-[370px] max-w-[500px] mx-auto rounded-lg">
-                    <div className="absolute top-0 left-0 h-full w-full bg-white/10 rounded-lg blur-3xl"></div>
-                    <motion.div
-                      className="relative h-full w-full rounded-lg overflow-hidden border-4 border-white/20"
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                    >
-                      <ImageWithLoading
-                        src="/images/20250222_171525.jpg"
-                        alt="MoCo Wild - Wildlife Conservation"
-                        width={500}
-                        height={500}
-                        className="object-cover"
-                        priority
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
+                  Our Conservation Story
+                </Button>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -212,9 +167,9 @@ export default function Home() {
 
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
                       <div className="nature-card p-6">
-                        <h3 className="text-xl font-semibold mb-2">Wildlife Rehabilitation</h3>
+                        <h3 className="text-xl font-semibold mb-2">Wildlife Education</h3>
                         <p className="text-zinc-600 dark:text-zinc-600">
-                          Providing care and rehabilitation for injured or orphaned wildlife.
+                          Providing advocacy and awareness resources about wildlife.
                         </p>
                       </div>
                       <div className="nature-card p-6">
@@ -267,7 +222,7 @@ export default function Home() {
                 className="nature-card p-6 text-center"
               >
                 <div className="text-primary text-4xl font-bold mb-2">
-                  {isVisible ? <CountUp end={4} duration={2} /> : "0"}
+                  {isVisible ? <CountUp end={6} duration={2} /> : "0"}
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-600">Major Partners</p>
               </motion.div>
@@ -280,7 +235,7 @@ export default function Home() {
                 className="nature-card p-6 text-center"
               >
                 <div className="text-primary text-4xl font-bold mb-2">
-                  {isVisible ? <CountUp end={5} duration={2} /> : "0"}
+                  {isVisible ? <CountUp end={12} duration={2} /> : "0"}
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-600">Successful Events</p>
               </motion.div>
@@ -293,7 +248,7 @@ export default function Home() {
                 className="nature-card p-6 text-center"
               >
                 <div className="text-primary text-4xl font-bold mb-2">
-                  {isVisible ? <CountUp end={50} duration={2} /> : "0"}
+                  {isVisible ? <CountUp end={60} duration={2} /> : "0"}
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-600">Community Members</p>
               </motion.div>

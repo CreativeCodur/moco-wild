@@ -84,21 +84,9 @@ export default function AboutPage() {
             <div className="relative pl-8 pb-8 border-l-2 border-secondary">
               <div className="absolute left-[-8px] top-0 h-4 w-4 rounded-full bg-secondary"></div>
               <div className="nature-card p-6 space-y-2">
-                <h3 className="text-2xl font-normal text-primary">2024: Community Building</h3>
+                <h3 className="text-2xl font-normal text-primary">2024-2025: Establishing Community</h3>
                 <p className="text-zinc-600 dark:text-zinc-600">
-                  Established MoCo Wild as a recognized conservation organization in Montgomery County. Build partnerships
-                  with local government, schools, and businesses. Launch our first major habitat restoration project.
-                </p>
-              </div>
-            </div>
-            <div className="relative pl-8 pb-8 border-l-2 border-secondary">
-              <div className="absolute left-[-8px] top-0 h-4 w-4 rounded-full bg-secondary"></div>
-              <div className="nature-card p-6 space-y-2">
-                <h3 className="text-2xl font-normal text-primary">2025: Education & Awareness</h3>
-                <p className="text-zinc-600 dark:text-zinc-600">
-                  Develop comprehensive educational programs for schools and community centers. Launch a county-wide
-                  awareness campaign about endangered local species. Establish a wildlife monitoring network with
-                  citizen scientists.
+                  Established MoCo Wild as a recognized youth conservation organization in Montgomery County. Launched fundraisers with established Conservation organizations, building partnerships. Policy projects that make an impact and involve our members.
                 </p>
               </div>
             </div>
