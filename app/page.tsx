@@ -49,7 +49,7 @@ export default function Home() {
 
           <div className="container px-4 md:px-6 relative z-10 flex items-center justify-center min-h-[calc(100vh-4rem)]">
             <motion.div 
-              className="flex flex-col items-center space-y-2 md:space-y-3 text-center -mt-8"
+              className="flex flex-col items-center space-y-2 md:space-y-3 text-center -mt-8 relative z-20 backdrop-blur-sm bg-black/5 rounded-2xl p-8"
               animate={{ 
                 y: [0, -10, 0],
               }}
