@@ -43,12 +43,12 @@ export default function Home() {
     <ErrorBoundary>
       <main className="flex flex-col min-h-screen" role="main">
         {/* Hero Section */}
-        <section className="w-full py-6 md:py-12 lg:py-24 relative overflow-hidden hero-section min-h-[calc(100vh-4rem)]">
+        <section className="w-full py-4 md:py-8 lg:py-16 relative overflow-hidden hero-section min-h-[calc(100vh-4rem)]">
           <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
           <div className="absolute inset-0 leaf-pattern z-0 opacity-30"></div>
 
           <div className="container px-4 md:px-6 relative z-10 flex items-center justify-center min-h-[calc(100vh-4rem)]">
-            <div className="flex flex-col items-center space-y-3 md:space-y-4 text-center">
+            <div className="flex flex-col items-center space-y-2 md:space-y-3 text-center -mt-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
