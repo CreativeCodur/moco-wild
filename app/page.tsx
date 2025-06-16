@@ -44,7 +44,7 @@ export default function Home() {
       <main className="flex flex-col min-h-screen" role="main">
         {/* Hero Section with Natural Elements */}
         <section
-          className="relative w-full min-h-[90vh] overflow-hidden hero-section"
+          className="relative w-full min-h-[60vh] sm:min-h-[80vh] md:min-h-[90vh] overflow-hidden py-8 sm:py-12"
           aria-label="Hero section"
         >
           <div className="absolute inset-0 nature-gradient clip-wave z-0"></div>
@@ -64,8 +64,8 @@ export default function Home() {
 
           <div className="absolute inset-0 z-10">
             <div className="container h-full px-4 md:px-6 flex flex-col justify-center">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="flex flex-col justify-between h-[370px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <div className="flex flex-col justify-between h-auto min-h-[220px] sm:min-h-[300px] md:min-h-[370px]">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -114,9 +114,9 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6, duration: 1 }}
-                  className="relative hero-image-container"
+                  className="relative"
                 >
-                  <div className="relative h-[370px] w-[500px] rounded-lg">
+                  <div className="relative w-full h-[180px] xs:h-[220px] sm:h-[300px] md:h-[370px] max-w-[500px] mx-auto rounded-lg">
                     <div className="absolute top-0 left-0 h-full w-full bg-white/10 rounded-lg blur-3xl"></div>
                     <motion.div
                       className="relative h-full w-full rounded-lg overflow-hidden border-4 border-white/20"
