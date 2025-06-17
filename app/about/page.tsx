@@ -210,13 +210,55 @@ export default function AboutPage() {
               </div>
               <CardHeader>
                 <CardTitle className="text-primary">Milkoftu Tarekegn</CardTitle>
-                <CardDescription>Secretary</CardDescription>
+                <CardDescription>Co-Secretary</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-zinc-600 dark:text-zinc-600">
                   Hello! My name is Milkoftu, I am currently a senior at Springbrook High School. My love for flamingos
                   interested me to join this org to help endangered species. Additionally, I am passionate about
                   advocating for equity in healthcare.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="nature-card overflow-hidden border-0 h-full">
+              <div className="relative h-[300px] flex items-center justify-center">
+                <ImageWithLoading
+                  src="/images/1000014061.jpg"
+                  alt="Aashi - Treasurer of MoCo Wild"
+                  className="object-cover"
+                  width={400}
+                  height={300}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-primary">Aashi</CardTitle>
+                <CardDescription>Tresurer</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-zinc-600 dark:text-zinc-600">
+                Hi everyone! My name is Aashi, and I am a member of the Class of 2028 at Richard Montgomery High School. I’m serving as co-treasurer of Moco Wild. I am passionate about giving back to our community and doing my part to help protect the environment. I look forward to serving all of you!
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="nature-card overflow-hidden border-0 h-full">
+              <div className="relative h-[300px] flex items-center justify-center">
+                <ImageWithLoading
+                  src="/images/1000014062.jpg"
+                  alt="Kashvi Bhatia - Secretary of MoCo Wild"
+                  className="object-cover"
+                  width={225}
+                  height={200}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-primary">Kashvi Bhatia</CardTitle>
+                <CardDescription>Co-Secretary</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-zinc-600 dark:text-zinc-600">
+                Hi everyone! My name is Kashvi Bhatia and I’m a CO 28’ student at Montgomery Blair High School. I’m super excited to serve as your MoCo Wild Co-Secretary this year and I can’t wait to work with this amazing team! I love animals, my favorite animal has been a dolphin since I can remember and I’m really looking forward to getting to support a cause I deeply care about, protecting endangered species.
                 </p>
               </CardContent>
             </Card>
