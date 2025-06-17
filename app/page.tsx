@@ -271,9 +271,9 @@ export default function Home() {
                 className="nature-card p-6 text-center"
               >
                 <div className="text-primary text-4xl font-bold mb-2">
-                  {isVisible ? <CountUp end={1000000} duration={2} /> : "0"}
+                  {isVisible ? <CountUp end={1500} duration={2} /> : "0"}
                 </div>
-                <p className="text-zinc-600 dark:text-zinc-600">More changes to go</p>
+                <p className="text-zinc-600 dark:text-zinc-600">Raised</p>
               </motion.div>
             </div>
           </div>
